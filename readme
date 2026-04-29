@@ -1,0 +1,3 @@
+step1:- pip install -r requirement.txt
+step2:- python3 app.py
+step3:- click on localhost server
