@@ -12,9 +12,10 @@ app=Flask(__name__)
 def home():
     if request.method=="POST":
         file=request.files.get("content")
-        print("file_successfully recieved")
-        pdf = extract(file)
+        if file and file.name!="":
+            print("file_successfully recieved")
+        text = extract(file)
         print("successfully the pdf operation has been done...")
-        return pdf
+        return f"<pre>{text}</pre>"
     return render_template("index.html")
 app.run(debug=True)
